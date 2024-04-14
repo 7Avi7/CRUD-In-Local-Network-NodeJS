@@ -1,0 +1,64 @@
+// handler._user.put = (requestProperties, callback) => {
+//   const { phone, firstName, lastName, password } = requestProperties.body;
+
+//   if (
+//     typeof phone === "string" &&
+//     phone.trim().length === 11 &&
+//     (typeof firstName === "string" ||
+//       typeof lastName === "string" ||
+//       typeof password === "string")
+//   ) {
+//     // Lookup the user
+//     data.read("users", phone, (err, userData) => {
+//       if (err) {
+//         // Error reading user data
+//         callback(500, { error: "Internal Server Error" });
+//         return;
+//       }
+
+//       if (!userData) {
+//         // User not found
+//         callback(404, { error: "User not found" });
+//         return;
+//       }
+
+//       // Parse user data
+//       const user = parseJSON(userData);
+
+//       if (!user) {
+//         // Failed to parse user data
+//         callback(500, { error: "Internal Server Error" });
+//         return;
+//       }
+
+//       // Update user data
+//       if (firstName) {
+//         user.firstName = firstName;
+//       }
+//       if (lastName) {
+//         user.lastName = lastName;
+//       }
+//       if (password) {
+//         user.password = hash(password);
+//       }
+
+//       // Store updated user data
+//       data.update("users", phone, user, (updateErr) => {
+//         if (updateErr) {
+//           // Error updating user data
+//           callback(500, { error: "Internal Server Error" });
+//           return;
+//         }
+
+//         // User updated successfully
+//         callback(200, { message: "User updated successfully" });
+//       });
+//     });
+//   } else {
+//     // Invalid request
+//     callback(400, {
+//       error:
+//         "Invalid request. Please provide a valid phone number and at least one field to update.",
+//     });
+//   }
+// };

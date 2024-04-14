@@ -1,0 +1,61 @@
+// handler._user.post = (requestProperties, callback) => {
+//   const firstName =
+//     typeOf(requestProperties.body.firstName) === "string" &&
+//     requestProperties.body.firstName.trim().length > 0
+//       ? requestProperties.body.firstName
+//       : false;
+//   const lastName =
+//     typeOf(requestProperties.body.lastName) === "string" &&
+//     requestProperties.body.lastName.trim().length > 0
+//       ? requestProperties.body.lastName
+//       : false;
+
+//   const phone =
+//     typeOf(requestProperties.body.phone) === "string" &&
+//     requestProperties.body.phone.trim().length === 11
+//       ? requestProperties.body.phone
+//       : false;
+
+//   const password =
+//     typeOf(requestProperties.body.password) === "string" &&
+//     requestProperties.body.password.trim().length > 0
+//       ? requestProperties.body.password
+//       : false;
+
+//   const tosAgreement =
+//     typeOf(requestProperties.body.tosAgreement) === "boolean" &&
+//     requestProperties.body.tosAgreement.trim().length > 0
+//       ? requestProperties.body.tosAgreement
+//       : false;
+
+//   if (firstName && lastName && phone && password && tosAgreement) {
+//     // make sure that the user doesn't already exists
+//     data.read("users", phone, (err1) => {
+//       if (err1) {
+//         let userObject = {
+//           firstName,
+//           lastName,
+//           phone,
+//           password: hash(password),
+//           tosAgreement,
+//         };
+//         // Store the user to db
+//         data.create("users", phone, userObject, (err) => {
+//           if (!err) {
+//             callback(200, { message: "User is created successfully" });
+//           } else {
+//             callback(500, { error: "Could not create a user" });
+//           }
+//         });
+//       } else {
+//         callback(500, {
+//           error: "There is a problem in server side",
+//         });
+//       }
+//     });
+//   } else {
+//     callback(400, {
+//       error: "You have a problem in your request",
+//     });
+//   }
+// };
